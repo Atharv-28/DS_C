@@ -9,7 +9,7 @@ int rear = -1, front = -1;
 void enqueue()
 {
     int data;
-    if(rear == MAX-1)
+    if((rear+1)%MAX == front)
     {
         printf("Queue is full");
     }
@@ -22,7 +22,7 @@ void enqueue()
     else{
         printf("Enter data : ");
         scanf("%d",&data);
-        rear+=1;
+        rear= (rear+1)%MAX;
         Queue[rear] = data;
     }
 }
@@ -34,7 +34,7 @@ void dequeue()
     }
     else{
         printf("Dequeued Element is %d",Queue[front]);
-        front++;
+        front = (front+1)%MAX;
     }
 }
 
