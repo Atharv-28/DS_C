@@ -102,7 +102,6 @@ void infixToPostfix(char* infix, char* postfix) {
         i++;
     }
 
-    // Pop all the remaining operators from the stack
     while (!isEmpty(&stack)) {
         postfix[k++] = pop(&stack);
     }
